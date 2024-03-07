@@ -35,7 +35,7 @@ h1,
 h2,
 h3,
 h4,
-h5 h6 {
+h5, h6 {
   margin: 0;
   padding: 0;
   line-height: normal;
@@ -53,7 +53,7 @@ nav.navbar {
   width: 100%;
   top: 0;
   z-index: 9999;
-  transition: 0.32 ease-in-out;
+  transition: 0.32s ease-in-out;
 }
 nav.navbar.scrolled {
   padding: 0px 0;
@@ -67,7 +67,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
   color: #fff !important;
   letter-spacing: 0.8px;
-  padding: 0.25px;
+  padding: 0 25px;
   font-size: 18px;
   opacity: 0.75;
 }
@@ -85,8 +85,8 @@ span.navbar-text {
   margin-left: 14px;
 }
 .social-icon a {
-  width: 52px;
-  height: 52px;
+  width: 42px;
+  height: 42px;
   background: rgba(217, 217, 217, 0.1);
   display: inline-flex;
   border-radius: 50%;
@@ -99,8 +99,8 @@ span.navbar-text {
 
 .social-icon a::before {
   content: "";
-  width: 52px;
-  height: 52px;
+  width: 42px;
+  height: 42px;
   position: absolute;
   background-color: #ffffff;
   border-radius: 50%;
@@ -111,13 +111,13 @@ span.navbar-text {
   transform: scale(1);
 }
 .social-icon a img {
-  width: 30px;
+  width: 40%;
   z-index: 1;
   transition: 0.3s ease-in-out;
 }
 .social-icon a:hover img {
-  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%)
-    hue-rotate(346deg);
+  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) brightness(95%) contrast(86%);
+    
 }
 .navbar-text button {
   font-weight: 700;
@@ -164,11 +164,11 @@ nav.navbar .navbar-togger-icon {
   background-image: none;
   position: relative;
   border-bottom: 2px solid #fff;
-  transition: all 30ms linear;
+  transition: all 300ms linear;
   top: -2px;
 }
-nav.navbar .navbar-toggler-icon::after,
-nav.navbar .navbar-togger-icon::before {
+nav.navbar .navbar-toggler-icon:after,
+nav.navbar .navbar-togger-icon:before {
   width: 24px;
   position: absolute;
   height: 2px;
@@ -182,22 +182,22 @@ nav.navbar .navbar-togger-icon::before {
 nav.navbar .navbar-togger-icon::after {
   top: 8px;
 }
-nav.navbar .navbar-togger[aria-expanded="true"] .navbar-toggle-icon:after {
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggle-icon:after {
   transform: rotate(45deg);
   background-color: #fff;
   height: 2px;
 }
-nav.navbar .navbar-togger[aria-expanded="true"] .navbar-togger-icon::before {
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
   transform: translateY(8px) rotate(-45deg);
   background-color: #fff;
   height: 2px;
 }
-nav.navbar .navbar-togger[aria-expanded="true"] .navbar-togger-icon {
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: transparent;
 }
 /*21.31*/
-#root {
-  text-align: center;
+/* #root {
+  
 }
 
 .logo {
@@ -234,4 +234,4 @@ nav.navbar .navbar-togger[aria-expanded="true"] .navbar-togger-icon {
 
 .read-the-docs {
   color: #888;
-}
+} */
