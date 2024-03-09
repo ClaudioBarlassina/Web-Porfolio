@@ -5,7 +5,7 @@ import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg from "../assets/img/header-img.svg";
 
 function Banner() {
-  const [loopNum, setLooopNum] = useState(0);
+  const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
   const [text, setText] = useState("");
@@ -25,9 +25,10 @@ function Banner() {
   const tick = () => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
+    console.log(i)
     let updatedText = isDeleting
       ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text + 1);
+      : fullText.substring(0, text.length + 1);
     setText(updatedText);
     if (isDeleting) {
       setDelta(prevDelta => prevDelta / 2);
@@ -37,7 +38,7 @@ function Banner() {
       setDelta(period);
     } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
-      setLooopNum(loopNum + 1);
+      setLoopNum(loopNum + 1);
       setDelta(500);
     }
   };
