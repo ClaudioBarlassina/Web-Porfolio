@@ -1,29 +1,76 @@
-import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
-import { ArrowRightCircle } from 'react-bootstrap-icons'
-import headerIng from "../assets/img/header-img.svg"
+import React from "react";
+import { useState, useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { ArrowRightCircle } from "react-bootstrap-icons";
+import headerImg from "../assets/img/header-img.svg";
 
 function Banner() {
-  return (
-      <section className='banner' id='home'>
-          <Container>
-              <Row className='aling-item-center'>
-                  <Col xs={12} md={6} xl={7}>
-                      <span className='tagline '> Welcome to mu Portfolio</span>
-                      <h1>{"hi I'am webdecoded"}<span className='wrap'> WEB developer</span></h1>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum non voluptates nam libero obcaecati? Odio laudantium fugiat dolore minima, voluptate expedita consectetur nobis, architecto officiis amet ut neque, hic repellat.</p>
-                       <button onClick={() => console.log("connect")}> Let's connect <ArrowRightCircle size={25}/> </button> 
-                  </Col>
-                  <Col xs={12} md={6} xl={5}>
-                      <img src={headerIng} alt="Headder" />
-                  </Col>
+  const [loopNum, setLooopNum] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+  const [text, setText] = useState("");
+  const [delta, setDelta] = useState(300 - Math.random() * 100);
+  const period = 2000;
 
-           </Row>
-          
-          </Container>  
-          
+  useEffect(() => {
+    let ticker = setInterval(() => {
+      tick();
+    }, delta);
+
+    return () => {
+      clearInterval(ticker);
+    };
+  }, [text]);
+
+  const tick = () => {
+    let i = loopNum % toRotate.length;
+    let fullText = toRotate[i];
+    let updatedText = isDeleting
+      ? fullText.substring(0, text.length - 1)
+      : fullText.substring(0, text + 1);
+    setText(updatedText);
+    if (isDeleting) {
+      setDelta(prevDelta => prevDelta / 2);
+    }
+    if (!isDeleting && updatedText === fullText) {
+      setIsDeleting(true);
+      setDelta(period);
+    } else if (isDeleting && updatedText === "") {
+      setIsDeleting(false);
+      setLooopNum(loopNum + 1);
+      setDelta(500);
+    }
+  };
+
+  return (
+    <section className="banner" id="home">
+      <Container>
+        <Row className="align-items-center">
+          <Col xs={12} md={6} xl={7}>
+            <span className="tagline "> Welcome to Portfolio</span>
+
+            <h1>
+              {"Hi I'm WebDecode "}
+              <span className="wrap">{text}</span>
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+              perspiciatis distinctio atque necessitatibus minus sapiente minima
+              aperiam, quia eos, sed, nesciunt dolorem aspernatur maiores vero
+              exercitationem repudiandae nihil quidem velit!
+            </p>
+            <button onClick={() => console.log("connect")}>
+              {" "}
+              Let's connect <ArrowRightCircle size={25} />
+            </button>
+          </Col>
+          <Col xs={12} md={6} xl={5}>
+            <img src={headerImg} alt="headder Img"></img>
+          </Col>
+        </Row>
+      </Container>
     </section>
-  )
+  );
 }
 
-export default Banner
+export default Banner;
