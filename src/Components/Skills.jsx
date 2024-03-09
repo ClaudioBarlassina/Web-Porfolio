@@ -42,8 +42,7 @@ function Skills() {
               <Carousel
                 responsive={responsive}
                 infinite={true}
-                className="skill-slider"
-                          >
+                className="skill-slider">
                               
 
               <div className="item">
@@ -61,7 +60,7 @@ function Skills() {
               </div>
               <div className="item">
                 <img src={meter1} alt="image" />
-                <h5> </h5>
+                <h5>Web Development </h5>
               </div>
               </Carousel>
             </div>
