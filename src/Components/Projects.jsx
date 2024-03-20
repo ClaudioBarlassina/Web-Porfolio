@@ -52,7 +52,7 @@ function Projects() {
               molestiae. Nam doloremque nesciunt autem atque!
             </p>
             <Tab.Container id="project-tabs" defaultActiveKey="first">
-              <Nav variant="pills" defaultActiveKey="/home">
+              <Nav variant="pills"  className="nav-pills mb-5 justify-content-center align-item-center" id="pills-tab">
                 <Nav.Item>
                   <Nav.Link eventKey="first">Tab One</Nav.Link>
                 </Nav.Item>
