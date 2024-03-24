@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg from "../assets/img/header-img.svg";
-import "animate.css";
-import TrackVisibility from "react-on-screen";
+
 
 function Banner() {
   const [loopNum, setLoopNum] = useState(0);
@@ -50,32 +49,22 @@ function Banner() {
       <Container>
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animated__animated animate__slideInUp" : ""
-                  }
-                >
-                  <span className="tagline "> Welcome to Portfolio</span>
+            <span className="tagline"> Welcome to Portfolio</span>
 
-                  <h1>
-                    {"Hi I'm WebDecode "}
-                    <span className="wrap">{text}</span>
-                  </h1>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-                    perspiciatis distinctio atque necessitatibus minus sapiente
-                    minima aperiam, quia eos, sed, nesciunt dolorem aspernatur
-                    maiores vero exercitationem repudiandae nihil quidem velit!
-                  </p>
-                  <button onClick={() => console.log("connect")}>
-                    {" "}
-                    Let's connect <ArrowRightCircle size={25} />
-                  </button>
-                </div>
-              )}
-            </TrackVisibility>
+            <h1>
+              {"Hi I'm WebDecode "}
+              <span className="wrap">{text}</span>
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+              perspiciatis distinctio atque necessitatibus minus sapiente minima
+              aperiam, quia eos, sed, nesciunt dolorem aspernatur maiores vero
+              exercitationem repudiandae nihil quidem velit!
+            </p>
+            <button onClick={() => console.log("connect")}>
+              {" "}
+              Let's connect <ArrowRightCircle size={25} />
+            </button>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <img src={headerImg} alt="headder Img"></img>

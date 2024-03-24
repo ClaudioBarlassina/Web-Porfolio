@@ -209,8 +209,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner .tagline{
   font-weight: 700;
   letter-spacing: 0.8px;
-  padding: 8px 18px;
-  background: linear-gradient(90.21deg rgba(178, 54, 124, 0.5) -5.91% rgba(74, 47, 189, 0.5 ));
+  padding: 8px 10px;
+  background: linear-gradient(90.21deg rgba(178, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5 )); 
   border: 1px solid rgba(255, 255, 255, 0.5);
   font-size: 20px;
   margin-bottom: 16px;
@@ -233,10 +233,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 96%;
  }
 .banner button{
-  color: #fff;
+  color: #fff; 
   font-weight: 700;
   font-size: 20px;
-  margin-top: 6px;
+  margin-top: 60px;
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
