@@ -374,7 +374,8 @@ margin: 14px 0 75px 0;
 /*Project */
 
 .project{
-  padding: 80px 0;
+  padding:120px 0;
+  z-index: -1;
   position: relative;
   background-color: black;
 }
@@ -515,7 +516,7 @@ width: 100% !important;
 }
 .newsletter-bx{
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 55px;
   color: #121212;
   padding: 85px 125px;
   margin-bottom: 80px;
@@ -529,7 +530,7 @@ width: 100% !important;
 
 
 }
-.new-email-bx{
+.new-email-bx {
   background: #fff;
   padding: 5px;
   border-radius: 20px;
@@ -587,7 +588,7 @@ width: 100% !important;
 .footer p {
   font-weight: 400;
   font-size: 14px;
-  color:#BBBBBB;
+  color: #b8b8b8;
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
